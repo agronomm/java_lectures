@@ -1,12 +1,17 @@
 public class Array1 {
 	public static void main(String[] args) {
-		int[] namber;
-		namber = new int[45];
-		for (int counter = 0; counter < 101; counter++) {
-			namber[counter] = 10 + counter * 2;
+		int[] array = new int[10];
+		;
+		for (int i = 0, j = 1; i < 10; i++, j++) {
+			array[i] = j;
 		}
-			for (int i = 0; i < namber.length; i++) {
-				System.out.println(namber[i]);
+		int summ = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (i != 5) {
+				summ += array[i];
 			}
 		}
+		System.out.println("summ" + summ);
 	}
+
+}
