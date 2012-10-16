@@ -11,26 +11,11 @@ public class FirstIfTest {
 		}
 		
 		int summ = 0;
-		
-		
-		
-		
-		
 		for (int i = 0; i < array.length; i++) {
 			if (i != 1 && i != 3) {
 				summ += array[i];
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		System.out.println("summ = " + summ);
 		
 
