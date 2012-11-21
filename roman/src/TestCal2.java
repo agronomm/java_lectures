@@ -8,6 +8,7 @@ public class TestCal2 {
 		GregorianCalendar d = new GregorianCalendar();
 		int today = d.get(Calendar.DAY_OF_MONTH);
 		int month = d.get(Calendar.MONTH);
+		
 
 		// Установка объекта d первое число месяца.
 		d.set(Calendar.DAY_OF_MONTH, 1);

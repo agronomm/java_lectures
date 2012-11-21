@@ -1,9 +1,9 @@
-package agronomm.lesson10;
+package roman.lesson10;
 
 public abstract class Operation {
 	protected double a;
 	protected double b;
-	
+
 	public abstract double doOperation();
 
 	public double getA() {
@@ -12,6 +12,7 @@ public abstract class Operation {
 
 	public void setA(double a) {
 		this.a = a;
+
 	}
 
 	public double getB() {
@@ -20,6 +21,5 @@ public abstract class Operation {
 
 	public void setB(double b) {
 		this.b = b;
-	} 
-
+	}
 }
