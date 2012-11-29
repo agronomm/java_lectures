@@ -7,12 +7,16 @@ import java.io.InputStreamReader;
 public class TestClass {
 	public static void main(String[] args) throws NumberFormatException,
 			IOException {
+		System.out.println("Добро пожаловать в консольный клькулятор КорявыЙ");
 		BufferedReader buff = new BufferedReader(new InputStreamReader(
 				System.in));
+		System.out.println("введите первое число");
 		int a = Integer.parseInt(buff.readLine());
+		System.out.println("введи * или / или + или -");
 		String operation = buff.readLine();
+		System.out.println("введи второе число");
 		int b = Integer.parseInt(buff.readLine());
-		
+
 		Operation oper = null;
 		if (operation.equals("+")) {
 			oper = new Plus();
@@ -21,7 +25,7 @@ public class TestClass {
 		} else if (operation.equals("*")) {
 			oper = new Multiply();
 		} else if (operation.equals("/")) {
-			oper = new Divide2();
+			oper = new Divide();
 		} else if (operation.equals("%")) {
 			oper = new Ostatok();
 		}
