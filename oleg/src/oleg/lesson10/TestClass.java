@@ -12,7 +12,7 @@ public class TestClass {
 		int a = Integer.parseInt(buff.readLine());
 		String operation = buff.readLine();
 		int b = Integer.parseInt(buff.readLine());
-		
+
 		Operation oper = null;
 		if (operation.equals("+")) {
 			oper = new Plus();

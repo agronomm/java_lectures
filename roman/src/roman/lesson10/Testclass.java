@@ -34,7 +34,7 @@ public class Testclass {
 		oper.setA(a);
 		oper.setB(b);
 
-		System.out.println("Ответ " + oper.doOperation());
+		System.out.println("Result " + oper.doOperation());
 
 	}
 
