@@ -10,22 +10,37 @@ package agronomm.lesson11.ht;
 public class Human {
 
     public static void main(String[] args) {
-        Koshelek koshelek = new Koshelek(30);
+        Koshelek koshelek = new Koshelek(10);
 
-        Money m1 = new Dolar();
-        m1.setValue(5);
-        koshelek.put(m1);
+        Money dolar = new Dolar();
+        dolar.setValue(5);
+        koshelek.put(dolar); dolar = new Dolar();
+        dolar.setValue(30);
+        koshelek.put(dolar); dolar = new Dolar();
+        dolar.setValue(20);
+        koshelek.put(dolar); dolar = new Dolar();
+        dolar.setValue(10);
+        koshelek.put(dolar);
 
-        Money m5 = new Hrivna();
-        m1.setValue(50);
-        koshelek.put(m1);
+        Money hrivna = new Hrivna();
+        hrivna.setValue(50);
+        koshelek.put(hrivna); hrivna = new Hrivna();
+        hrivna.setValue(100);
+        koshelek.put(hrivna); hrivna = new Hrivna();
+        hrivna.setValue(5);
+        koshelek.put(hrivna);
 
         System.out.println(koshelek.toString());
-        System.out.println("В кошельке: " + koshelek.howMuch() + "UAH");
+        System.out.println("Сумарно: " + koshelek.howMuch() + "UAH");
 
 
 
 
 
+    }
+
+
+    public void goTo(String place) {
+        System.out.println("Ok. I go to " + place);
     }
 }
