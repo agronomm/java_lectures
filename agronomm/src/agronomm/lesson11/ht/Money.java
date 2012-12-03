@@ -8,14 +8,26 @@ package agronomm.lesson11.ht;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Money {
-    //сумма
-    int value;
+
     //валюта
-    String currency;
+    protected String currency;
     //курс
-    int rate;
+    private int rate;
 
     public abstract void setValue(int value);
+    public abstract int getValue();
 
+    public Money(int rate, String currency) {
+        this.rate = rate;
+        this.currency = currency;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public int getRate() {
+        return rate;
+    }
 
 }
