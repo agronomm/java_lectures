@@ -50,15 +50,14 @@ public class Koshelek {
 				resultSumm += m.getValue();
 			} else if (m.getCurrency().equals("USD")) {
 				resultSumm += m.getValue() * m.getRate();
-			}
-			else if (m.getCurrency().equals("EUR")) {
+			} else if (m.getCurrency().equals("EUR")) {
 				resultSumm += m.getValue() * m.getRate();
 			}
 		}
 		// альтернатива
 		// пока у нас есть деньги и кошелек не закончился
 		// к сумме прибавляем значение купюры умноженное на курс
-
+        resultSumm = 0;
 		for (int i = 0; i < current && i < moneys.length; i++) {
 			Money m = moneys[i];
 			resultSumm += m.getValue() * m.getRate();
@@ -73,4 +72,9 @@ public class Koshelek {
 	public String toString() {
 		return "В кошельке";
 	}
+
+    @Override
+    public boolean equals(Object obj) {
+        return howMuch() == ((Koshelek) obj).howMuch();    //To change body of overridden methods use File | Settings | File Templates.
+    }
 }

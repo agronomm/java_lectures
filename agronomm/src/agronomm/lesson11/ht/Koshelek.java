@@ -9,7 +9,7 @@ package agronomm.lesson11.ht;
  */
 public class Koshelek {
     // масив денег - ссылка на несуществующий массив
-    final Money[] moneys;
+    Money[] moneys;
     // текущее место для вставки денег
     int current;
 
