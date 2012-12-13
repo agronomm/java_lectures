@@ -9,7 +9,7 @@ package agronomm.lesson11.ht;
  */
 public class Koshelek {
     // масив денег - ссылка на несуществующий массив
-    Money[] moneys;
+    final Money[] moneys;
     // текущее место для вставки денег
     int current;
 
@@ -22,6 +22,10 @@ public class Koshelek {
         current = 0;
         // масиву денег присваиваем новый обьект - массив из денег в количестве capacity штук
         moneys = new Money[capacity];
+    }
+
+    public void bay() {
+        moneys[current--] = null;
     }
 
     /**
@@ -47,9 +51,11 @@ public class Koshelek {
             if (m.getCurrency().equals("UAH")) {
                 resultSumm += m.getValue();
             } else if (m.getCurrency().equals("USD")) {
-                resultSumm += m.getValue() * m.getRate();
+                resultSumm += ((Dolar) m).getByRate();
             }
         }
+        double resSumInDouble = (double) resultSumm;
+        resultSumm = (int) resSumInDouble;
         //альтернатива
         // пока у нас есть деньги и кошелек не закончился
         // к сумме прибавляем значение купюры умноженное на курс
@@ -66,6 +72,17 @@ public class Koshelek {
     // так сказать ответ на вопрос "Что у тебя там?"
     //
     public String toString() {
-        return "В кошельке " + ... + ...;
+        int sumUAH = 0;
+        int sumUSD = 0;
+        for (int i = 0; i < current; i++) {
+            Money m = moneys[i];
+            if (m.getCurrency().equals("UAH")) {
+                sumUAH += m.getValue();
+            } else {
+                sumUSD += m.getValue();
+            }
+        }
+
+        return "В кошельке лежит " + sumUAH + " гривен и " + sumUSD + "долларов";
     }
 }
