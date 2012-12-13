@@ -15,6 +15,7 @@ public class Testclass {
 			IOException {
 		BufferedReader buff = new BufferedReader(new InputStreamReader(
 				System.in));
+		System.out.println("gfgfgfg");
 		int a = Integer.parseInt(buff.readLine());
 		String operation = buff.readLine();
 		int b = Integer.parseInt(buff.readLine());
@@ -29,6 +30,7 @@ public class Testclass {
 		} else if (operation.equals("/")) {
 			oper = new Division();
 		}
+		
 		oper.setA(a);
 		oper.setB(b);
 

@@ -10,7 +10,7 @@ package agronomm.lesson11.ht;
 public class Human {
 
     public static void main(String[] args) {
-        Koshelek koshelek = new Koshelek(10);
+        Koshelek koshelek = new KosheIek(10);
 
         Money dolar = new Dolar();
         dolar.setValue(5);
@@ -29,7 +29,8 @@ public class Human {
         koshelek.put(hrivna); hrivna = new Hrivna();
         hrivna.setValue(5);
         koshelek.put(hrivna);
-
+        koshelek.bay();
+        koshelek.bay();
         System.out.println(koshelek.toString());
         System.out.println("Сумарно: " + koshelek.howMuch() + "UAH");
 
