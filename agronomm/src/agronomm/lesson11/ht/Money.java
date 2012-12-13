@@ -14,8 +14,13 @@ public abstract class Money {
     //курс
     private int rate;
 
-    public abstract void setValue(int value);
-    public abstract int getValue();
+    public void setValue(int value) {
+        value = 0;
+    }
+
+    public int getValue() {
+        return 0;
+    }
 
     public Money(int rate, String currency) {
         this.rate = rate;

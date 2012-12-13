@@ -32,4 +32,8 @@ public class Dolar extends Money {
     public int getValue() {
         return value;
     }
+
+    public int getByRate() {
+        return getValue() * getRate();
+    }
 }
