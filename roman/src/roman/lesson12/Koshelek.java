@@ -77,4 +77,11 @@ public class Koshelek {
     public boolean equals(Object obj) {
         return howMuch() == ((Koshelek) obj).howMuch();    //To change body of overridden methods use File | Settings | File Templates.
     }
-}
+    public void get(Money money) {
+		// положить купюру на место номер current, а саму current после этого
+		// увеличить на 1
+		moneys[current++] = money;
+	}
+ }
+
+

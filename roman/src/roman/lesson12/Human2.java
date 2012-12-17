@@ -12,7 +12,8 @@ public class Human2 {
 		Money euvro = new Euvro();
 		euvro.setValue(100);
 		koshelek.put(euvro);
-
+		euvro.setValue(50);
+		koshelek.put(euvro);
 		System.out.println(koshelek.toString());
 		System.out.println("У вас в кошельке " + koshelek.howMuch() + " " + "UAH");
 
