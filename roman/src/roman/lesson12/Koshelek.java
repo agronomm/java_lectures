@@ -1,4 +1,4 @@
-package roman.lesson12;
+package lesson12;
 
 public class Koshelek {
 	// масив денег - ссылка на несуществующий массив
@@ -57,7 +57,7 @@ public class Koshelek {
 		// альтернатива
 		// пока у нас есть деньги и кошелек не закончился
 		// к сумме прибавляем значение купюры умноженное на курс
-        resultSumm = 0;
+		resultSumm = 0;
 		for (int i = 0; i < current && i < moneys.length; i++) {
 			Money m = moneys[i];
 			resultSumm += m.getValue() * m.getRate();
@@ -69,19 +69,36 @@ public class Koshelek {
 	// возвращает нам описание того - что лежит в кошельке
 	// так сказать ответ на вопрос "Что у тебя там?"
 	//
-	public String toString() {
-		return "В кошельке";
+
+	@Override
+	public boolean equals(Object obj) {
+		return howMuch() == ((Koshelek) obj).howMuch();
 	}
 
-    @Override
-    public boolean equals(Object obj) {
-        return howMuch() == ((Koshelek) obj).howMuch();    //To change body of overridden methods use File | Settings | File Templates.
-    }
-    public void get(Money money) {
+	public void get(Money money) {
 		// положить купюру на место номер current, а саму current после этого
 		// увеличить на 1
 		moneys[current++] = money;
 	}
- }
 
+	public String toString() {
+		int resultSumm = 0;
+		int resultSumm1 = 0;
+		int resultSumm2 = 0;
+		for (int i = 0; i < current && i < moneys.length; i++) {
+			Money m = moneys[i];
+			if (m.getCurrency().equals("UAH")) {
+				resultSumm += m.getValue();
+			} else if (m.getCurrency().equals("USD")) {
+				resultSumm1 += m.getValue();
+			} else if (m.getCurrency().equals("EUR")) {
+				resultSumm2 += m.getValue();
+			}
 
+		}
+		return "В кошельке" + " " + resultSumm + "UAH" + " " + resultSumm1 + "USD" + " " 
+				+ resultSumm2 + "EUR";
+
+	}
+
+}
