@@ -1,4 +1,4 @@
-package lesson12;
+package roman.lesson12;
 
 public class Euvro extends Money {
 	private int value;

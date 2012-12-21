@@ -1,4 +1,4 @@
-package lesson12;
+package roman.lesson12;
 
 public class Koshelek {
 	// масив денег - ссылка на несуществующий массив
@@ -70,37 +70,15 @@ public class Koshelek {
 	// так сказать ответ на вопрос "„то у теб€ там?"
 	//
 
-	@Override
-	public boolean equals(Object obj) {
-		return howMuch() == ((Koshelek) obj).howMuch();
+	
+
+	
+	public Money get() {
+		Money resultMoney = moneys[current - 1];
+		moneys[current - 1] = null;
+		current = current - 1;
+		return resultMoney;
 	}
-
-<<<<<<< HEAD
-	public void get(Money money) {
-		// положить купюру на место номер current, а саму current после этого
-		// увеличить на 1
-		moneys[current++] = money;
-	}
-=======
-    @Override
-    public boolean equals(Object obj) {
-        return howMuch() == ((Koshelek) obj).howMuch();    //To change body of overridden methods use File | Settings | File Templates.
-    }
-
-
-
-
-
-    //публичный метод который ничего не требует что бы его вызвали,
-    // но он об€зан вернуть Money
-    public Money get() {
-        Money resultMoney = moneys[current - 1];
-        moneys[current - 1] = null;
-        current = current -1;
-        return resultMoney;
-    }
- }
->>>>>>> 46560e2644aec10606ff38558e224ed0cfe46502
 
 	public String toString() {
 		int resultSumm = 0;
@@ -117,8 +95,8 @@ public class Koshelek {
 			}
 
 		}
-		return "¬ кошельке" + " " + resultSumm + "UAH" + " " + resultSumm1 + "USD" + " " 
-				+ resultSumm2 + "EUR";
+		return "¬ кошельке" + " " + resultSumm + "UAH" + " " + resultSumm1
+				+ "USD" + " " + resultSumm2 + "EUR";
 
 	}
 
