@@ -73,10 +73,14 @@ public class Koshelek {
 	
 
 	
-	public Money get() {
+	public  Money get() {
 		Money resultMoney = moneys[current - 1];
 		moneys[current - 1] = null;
 		current = current - 1;
+		return resultMoney;
+	}
+	public  Money look( int current) {
+		Money resultMoney = moneys[current];
 		return resultMoney;
 	}
 

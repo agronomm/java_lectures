@@ -22,21 +22,27 @@ public class Human2 {
 		hrivna.setValue(200);
 		koshelek.put(hrivna);
 		hrivna = new Hrivna();
-		hrivna.setValue(50);
+		hrivna.setValue(100);
 		koshelek.put(hrivna);
 		
+		
+
+		System.out.print("Текущий курс EUR=" + "1:" + euvro.getRate() + " ");
+		System.out.print("USD=" + "1:" + dolar.getRate() + " ");
+		System.out.println("UAH=" + "1:" + hrivna.getRate());
 		System.out.println(koshelek.toString());
-		System.out.println("Итого " + koshelek.howMuch() + " " + "UAH");
-		euvro = new Euvro();
-		euvro.setValue(50);
-		koshelek.put(euvro);
+		System.out.println("Всего в национальной валюте " + koshelek.howMuch()
+				+ " " + "UAH");
+
 		System.out.println("Деньга которую кладем в кошелек = " + euvro);
 		System.out.println("У вас в кошельке " + koshelek.howMuch() + " "
 				+ "UAH");
+
 		Money takenMoney = koshelek.get();
-		System.out.println("Взятая деньга = " + takenMoney);
-		System.out.println("У вас в кошельке " + koshelek.howMuch() + " "
+		System.out.println("Взятая деньга номиналом " + " " + takenMoney);
+		System.out.println("Осталось в кошельке " + koshelek.howMuch() + " "
 				+ "UAH");
 
+		System.out.println("Запрашиваемая купюра" + " " + koshelek.look(2));
 	}
 }
