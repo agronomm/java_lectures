@@ -57,7 +57,7 @@ public class Koshelek {
 		// альтернатива
 		// пока у нас есть деньги и кошелек не закончился
 		// к сумме прибавляем значение купюры умноженное на курс
-        resultSumm = 0;
+		resultSumm = 0;
 		for (int i = 0; i < current && i < moneys.length; i++) {
 			Money m = moneys[i];
 			resultSumm += m.getValue() * m.getRate();
@@ -69,12 +69,39 @@ public class Koshelek {
 	// возвращает нам описание того - что лежит в кошельке
 	// так сказать ответ на вопрос "Что у тебя там?"
 	//
-	public String toString() {
-		return "В кошельке";
+
+	
+
+	
+	public  Money get() {
+		Money resultMoney = moneys[current - 1];
+		moneys[current - 1] = null;
+		current = current - 1;
+		return resultMoney;
+	}
+	public  Money look( int current) {
+		Money resultMoney = moneys[current];
+		return resultMoney;
 	}
 
-    @Override
-    public boolean equals(Object obj) {
-        return howMuch() == ((Koshelek) obj).howMuch();    //To change body of overridden methods use File | Settings | File Templates.
-    }
+	public String toString() {
+		int resultSumm = 0;
+		int resultSumm1 = 0;
+		int resultSumm2 = 0;
+		for (int i = 0; i < current && i < moneys.length; i++) {
+			Money m = moneys[i];
+			if (m.getCurrency().equals("UAH")) {
+				resultSumm += m.getValue();
+			} else if (m.getCurrency().equals("USD")) {
+				resultSumm1 += m.getValue();
+			} else if (m.getCurrency().equals("EUR")) {
+				resultSumm2 += m.getValue();
+			}
+
+		}
+		return "В кошельке" + " " + resultSumm + "UAH" + " " + resultSumm1
+				+ "USD" + " " + resultSumm2 + "EUR";
+
+	}
+
 }
